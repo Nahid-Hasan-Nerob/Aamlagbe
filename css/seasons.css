@@ -1,0 +1,129 @@
+/* Seasons Section Styles */
+.seasons {
+  padding: var(--spacing-xxxl) 0;
+  background-color: var(--color-white);
+  position: relative;
+}
+
+.seasons::before,
+.seasons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.seasons::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--color-off-white), transparent);
+}
+
+.seasons::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--color-off-white), transparent);
+}
+
+.seasons-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  margin-top: var(--spacing-xl);
+}
+
+.seasons-timeline::after {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 10%;
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-primary-light), var(--color-primary), var(--color-primary-dark));
+  z-index: -1;
+}
+
+.season-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--spacing-lg);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.season-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-white);
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.season-icon span {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+}
+
+.season-info {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.season-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-gray-900);
+}
+
+.season-info p {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-gray-700);
+  font-size: 0.95rem;
+}
+
+.season-varieties {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.season-varieties li {
+  background-color: var(--color-gray-100);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--color-gray-700);
+}
+
+.season-card.active .season-icon {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary-dark);
+  transform: scale(1.1);
+}
+
+.season-card.active .season-icon span {
+  color: var(--color-white);
+}
+
+.season-card.active .season-info {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+}
